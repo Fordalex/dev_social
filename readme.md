@@ -1,4 +1,6 @@
-### Development Social Meida
+## Developers Social Media
+
+#### The Set Up
 
 First start with initialising npm.
 
@@ -49,6 +51,8 @@ Run the project with the following command:
 Go to the browser and search the following to view the project.
 
     http://localhost:5000/
+
+#### Connecting to the database
 
 ## Acknowledgements
 
