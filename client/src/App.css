@@ -292,6 +292,7 @@
   .table td {
     padding: 1rem;
     text-align: left;
+    border: solid rgb(226, 226, 226) 1px;
   }
   
   .table th {
