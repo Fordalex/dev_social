@@ -42,6 +42,10 @@ export const register = ({ name, email, password }) => async dispatch => {
         }
     };
 
+    dispatch({type: LOGOUT})
+    dispatch({type: CLEAR_PROFILE})
+
+
     const body = { name, email, password };
 
     stringifyObject(body, {
