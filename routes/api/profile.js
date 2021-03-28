@@ -1,6 +1,5 @@
 const express = require("express");
 const request = require("request");
-const config = require("config");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator/check");
@@ -8,6 +7,8 @@ const { check, validationResult } = require("express-validator/check");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
+
+const {REACT_APP_GITHUB_CLIENT_ID, REACT_APP_GITHUB_SECERT} = process.env;
 
 // @route        GET api/profile/me
 // @desc         Get current users profile
@@ -315,9 +316,7 @@ router.get("/github/:username", (req, res) => {
         const options = {
             uri: `https://api.github.com/users/${
         req.params.username
-      }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-        "githubClientId"
-      )}&client_secret=${config.get("githubSecret")}`,
+      }/repos?per_page=5&sort=created:asc&client_id=${REACT_APP_GITHUB_CLIENT_ID}&client_secret=${REACT_APP_GITHUB_SECERT}`,
             method: "GET",
             headers: { "user-agent": "node.js" },
         };
